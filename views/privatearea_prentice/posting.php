@@ -15,11 +15,7 @@
   <link href="libs/dashboard/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="libs/dashboard/css/sb-admin.css" rel="stylesheet">
-  <?php
-    if($teamname == null) {
-      $teamname = "UNKNOWN";
-    }
-  ?>
+  
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -33,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="?page=privatearea_prentice&action=index">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -46,7 +42,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Posting">
-          <a class="nav-link" href="?page=privatearea_posting&action=index">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-pencil-square"></i>
             <span class="nav-link-text">Posting</span>
           </a>
@@ -76,63 +72,37 @@
         <li class="breadcrumb-item">
           <a href="#">Loopprentice</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">Posting </li>
       </ol>
 
 
       <!-- jumbotron -->
-       <div class="row">
+       <div class="row justify-content-center ">
        
-        <div class="col-lg-12">
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-3">Hai , <?php echo $username; ?> </h1>
-              <p class="lead">Selamat datang di Loopprentice.</p>
-                <?php
-                $message_sales = '{}';
-
-                if(isset($_SESSION['message_sales'])) {
-                    $message_sales = $_SESSION['message_sales'];
-                    unset($_SESSION['message_sales']);
-                }
-
-                $message = json_decode($message_sales);
-                if($message_sales != '{}') {
-                    echo $message->message;
-                }
-                ?>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- banner carousel -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="libs/home_register/img/banner1.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="libs/home_register/img/banner2.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="libs/home_register/img/banner3.jpg" alt="Third slide">
-                </div>
+        <div class="col-lg-11 " >
+          <!-- style="background-color: #E9ECEF; border-radius: 10px;  -->
+          <form>
+              <div class="form-group">
+                <label for="judul">Judul Positng</label>
+                <input type="text" class="form-control" name="judul" placeholder="...">
               </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
+
+              <div class="form-group">
+                <label for="isi">Isi Posting</label>
+                <textarea class="form-control" rows="3" name="isi"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="foto">Upload Foto</label>
+                <input type="file" class="form-control-file" id="foto" name="foto" >
+              </div>
+
+              <button href="#" class="btn btn-success btn-md " name="upload_posting" type="submit">Upload Posting </button>
+
+          </form>
         </div>
       </div>
-      <!-- Area Chart Example-->
+
      
       
     <!-- /.container-fluid-->

@@ -16,6 +16,10 @@
                 require_once('models/privatearea.php');
                 $controller = new PrivateAreaPrenticeController();
                 break;
+            case 'privatearea_posting':
+                //require_once('models/privatearea.php');
+                $controller = new PrivateAreaPostingController();
+                break;
             case 'login_prentice':
                 require_once('models/login.php');
                 $controller = new LoginPrenticeController();
@@ -46,6 +50,7 @@
         'blog_single_prentice' => array('index','add','error'),
         'register_prentice' => array('index','add','error'),
         'privatearea_prentice' => array('index', 'addsales', 'error'),
+        'privatearea_posting' => array('index', 'addsales', 'error'),
         'privatearea_sales_prentice' => array('add', 'error'),
         'login_prentice' => array('index', 'auth', 'error'),
         'logout_prentice' => array('index', 'destroy', 'error')
