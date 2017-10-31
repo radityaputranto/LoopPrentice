@@ -13,10 +13,13 @@
 
     <!-- Bootstrap core CSS -->
     <link href="libs/home_register/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
+
+    <!-- custom -->
     <link rel="stylesheet" type="text/css" href="libs/home_register/general/normalize.css">
     <link rel="stylesheet" type="text/css" href="libs/home_register/general/style.css">
-    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
-    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/blog/style_blog.css">
 
     <!-- wow.js -->
     <link rel="stylesheet" href="libs/home_register/css/libs/animate.css">
@@ -52,13 +55,14 @@
     </div>
 </nav>
 <!-- akhir header -->
+ 
  <!-- Page Content -->
-    <div class="container">
+    <div class="container blog_konten">
 
       <div class="row">
 
         <!-- Post Content Column -->
-        <div class="col-lg-8">
+        <div class="col-lg-8 ">
 
           <!-- Title -->
           <h1 class="mt-4">Post Title</h1>
@@ -78,8 +82,8 @@
 
           <!-- Preview Image -->
           <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-
-          <hr>
+          <br>
+          <div class="single_post">
 
           <!-- Post Content -->
           <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
@@ -146,6 +150,7 @@
                 </div>
               </div>
 
+             </div><!-- akhir konten tulisan --> 
             </div>
           </div>
 

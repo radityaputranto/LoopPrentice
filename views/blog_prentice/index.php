@@ -11,12 +11,15 @@
     <script src="libs/home_register/js/jquery.min.js"></script>
 
 
-    <!-- Bootstrap core CSS -->
+   <!-- Bootstrap core CSS -->
     <link href="libs/home_register/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
+
+    <!-- custom -->
     <link rel="stylesheet" type="text/css" href="libs/home_register/general/normalize.css">
     <link rel="stylesheet" type="text/css" href="libs/home_register/general/style.css">
-    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
-    <link rel="stylesheet" href="libs/home_register/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/blog/style_blog.css">
 
     <!-- wow.js -->
     <link rel="stylesheet" href="libs/home_register/css/libs/animate.css">
@@ -53,7 +56,7 @@
 </nav>
 <!-- akhir header -->
 <!-- Page Content -->
-    <div class="container">
+    <div class="container blog_konten">
 
       <div class="row">
 
