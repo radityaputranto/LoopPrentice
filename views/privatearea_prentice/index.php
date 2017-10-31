@@ -45,6 +45,12 @@
             <span class="nav-link-text">Upload Excel</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Posting">
+          <a class="nav-link" href="#">
+            <i class="fa fa-fw fa-pencil-square"></i>
+            <span class="nav-link-text">Posting</span>
+          </a>
+        </li>
         
       </ul>
       <ul class="navbar-nav sidenav-toggler">

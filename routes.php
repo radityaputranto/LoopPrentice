@@ -27,29 +27,14 @@
                 require_once('models/privatearea_sales.php');
                 $controller = new PrivateAreaSalesPrenticeController();
                 break;
-            // case 'login':
-            //     require_once('models/login.php');
-            //     $controller = new LoginController();
-            //     break;
-            // case 'logout':
-            //     $controller = new LogoutController();
-            //     break;
-            // case 'home':
-            //     require_once('models/home.php');
-            //     $controller = new HomeController();
-            //     break;
-            // case 'register':
-            //     require_once('models/register.php');
-            //     $controller = new RegisterController();
-            //     break;
-            // case 'privatearea':
-            //     require_once('models/privatearea.php');
-            //     $controller = new PrivateAreaController();
-            //     break;
-            // case 'privatearea_sales':
-            //     require_once('models/privatearea_sales.php');
-            //     $controller = new PrivateAreaSalesController();
-            //     break;
+            case 'blog_prentice':
+                //require_once('models/blog.php');
+                $controller = new blog_PrenticeController();
+                break;
+            case 'blog_single_prentice':
+                //require_once('models/blogSingle.php');
+                $controller = new blog_single_PrenticeController();
+                break;
         }
 
         $controller->{ $action }();
@@ -57,6 +42,8 @@
 
     $controllers = array(
         'home_prentice' => array('index', 'error'),
+        'blog_prentice' => array('index','add','error'),
+        'blog_single_prentice' => array('index','add','error'),
         'register_prentice' => array('index','add','error'),
         'privatearea_prentice' => array('index', 'addsales', 'error'),
         'privatearea_sales_prentice' => array('add', 'error'),
