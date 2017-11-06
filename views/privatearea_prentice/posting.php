@@ -15,7 +15,13 @@
   <link href="libs/dashboard/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="libs/dashboard/css/sb-admin.css" rel="stylesheet">
-  
+  <!-- summer note -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -75,6 +81,8 @@
         <li class="breadcrumb-item active">Posting </li>
       </ol>
 
+      
+   
 
       <!-- jumbotron -->
        <div class="row justify-content-center ">
@@ -83,20 +91,26 @@
           <!-- style="background-color: #E9ECEF; border-radius: 10px;  -->
           <form>
               <div class="form-group">
+                <label for="exampleFormControlSelect1">Kategori</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Artikel</option>
+                  <option>Vlog</option>
+                  <option>Photo</option>
+                  <option>lainnya</option>
+                  
+                </select>
+              </div>
+              <br>
+              
+              <div class="form-group">
                 <label for="judul">Judul Positng</label>
                 <input type="text" class="form-control" name="judul" placeholder="...">
               </div>
 
-              <div class="form-group">
-                <label for="isi">Isi Posting</label>
-                <textarea class="form-control" rows="3" name="isi"></textarea>
-              </div>
-
-              <div class="form-group">
-                <label for="foto">Upload Foto</label>
-                <input type="file" class="form-control-file" id="foto" name="foto" >
-              </div>
-
+              <!-- summernote -->
+              <div id="summernote"></div>
+              <br>
+              
               <button href="#" class="btn btn-success btn-md " name="upload_posting" type="submit">Upload Posting </button>
 
           </form>
@@ -136,6 +150,8 @@
         </div>
       </div>
     </div>
+
+  </div>
 
 
     <!-- sales Modal-->
@@ -197,6 +213,14 @@
 
 
   </div>
+
+   <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello bootstrap 4',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
 </body>
   <!-- Bootstrap core JavaScript-->
   <script src="libs/dashboard/vendor/jquery/jquery.min.js"></script>
