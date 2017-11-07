@@ -107,9 +107,18 @@
                 <input type="text" class="form-control" name="judul" placeholder="...">
               </div>
 
+              <!-- gambar cover -->
+               <div class="form-group">
+                  <label for="imgCover">Cover Gambar Posting</label>
+                  <input type="file" class="form-control-file" id="imgCover">
+                </div>
+
               <!-- summernote -->
-              <div id="summernote"></div>
-              <br>
+              <div class="form-group">
+                <label >Isi Posting</label>
+                <div id="summernote" name="artikel"></div>
+                <br>
+              </div>
               
               <button href="#" class="btn btn-success btn-md " name="upload_posting" type="submit">Upload Posting </button>
 
@@ -216,7 +225,7 @@
 
    <script>
       $('#summernote').summernote({
-        placeholder: 'Hello bootstrap 4',
+        placeholder: 'Isi Artikel Kalian',
         tabsize: 2,
         height: 100
       });

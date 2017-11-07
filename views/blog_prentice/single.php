@@ -157,10 +157,11 @@
         </div>
 
          <!-- Sidebar Widgets kolom -->
+        <!-- Sidebar Widgets kolom -->
         <div class="col-md-4">
 
           <!-- Search Widget -->
-          <div class="card my-4">
+          <!-- <div class="card my-4">
             <h5 class="card-header">Pencarian</h5>
             <div class="card-body">
               <div class="input-group">
@@ -170,39 +171,30 @@
                 </span>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Categories Widget -->
           <div class="card my-4">
             <h5 class="card-header">Kategori</h5>
             <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
+              <div class="row ">
+                <div class="col-lg-12 ">
                   <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Videoku</a>
+                    <li class="kategori" >
+                      <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i> Video / Vlog</a>
                     </li>
-                    <li>
-                      <a href="#">Fotoku</a>
+                    <li class="kategori">
+                      <a href="#"> <i class="fa fa-camera-retro" aria-hidden="true"></i> Foto/a>
                     </li>
-                    <li>
-                      <a href="#">Postingku</a>
+                    <li class="kategori">
+                      <a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> Artikel</a>
+                    </li>
+                    <li class="kategori">
+                      <a href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Promo</a>
                     </li>
                   </ul>
                 </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                     <li>
-                      <a href="#">Videoku</a>
-                    </li>
-                    <li>
-                      <a href="#">Fotoku</a>
-                    </li>
-                    <li>
-                      <a href="#">Postingku</a>
-                    </li>
-                  </ul>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -211,7 +203,27 @@
           <div class="card my-4">
             <h5 class="card-header">Promo</h5>
             <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita 
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="libs/blog/img/Ad1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="libs/blog/img/Ad2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="libs/blog/img/Ad3.jpg" alt="Third slide">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div> 
             </div>
           </div>
 
