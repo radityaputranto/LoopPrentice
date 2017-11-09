@@ -112,6 +112,7 @@
                 <label for="exampleFormControlSelect1">Kategori</label>
                 <?php $kategori = array('Artikel'=>'Artikel','Blog'=>'Blog','Vlog'=>'Vlog','Photo'=>'Photo','Lainnya'=>'Lainnya'); ?>
                 <select required name="kategori" class="form-control">
+                  <option value="">-pilih-</option>
                   <?php foreach ($kategori as $key => $value) { ?>
                     <option value="<?php echo $key;?>"><?php echo $value;?></option>  
                   <?php } ?>

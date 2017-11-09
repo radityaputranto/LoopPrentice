@@ -34,7 +34,7 @@
                 $controller = new PrivateAreaSalesPrenticeController();
                 break;
             case 'blog_prentice':
-                //require_once('models/blog.php');
+                require_once('models/BlogModelFront.php');
                 $controller = new blog_PrenticeController();
                 break;
             case 'blog_single_prentice':
