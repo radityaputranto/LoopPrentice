@@ -89,29 +89,28 @@
        
         <div class="col-lg-11 " >
           <!-- style="background-color: #E9ECEF; border-radius: 10px;  -->
-          <form>
+          <form method="post" action="?page=privatearea_posting&action=add" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Kategori</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Artikel</option>
-                  <option>Vlog</option>
-                  <option>Photo</option>
-                  <option>lainnya</option>
-                  
+                <select required name="kategori" class="form-control" id="exampleFormControlSelect1">
+                  <option value="Artikel">Artikel</option>
+                  <option value="Vlog">Vlog</option>
+                  <option value="Photo">Photo</option>
+                  <option value="Lainnya">Lainnya</option>
                 </select>
               </div>
               <br>
               
               <div class="form-group">
-                <label for="judul">Judul Positng</label>
-                <input type="text" class="form-control" name="judul" placeholder="...">
+                <label for="judul">Judul Posting</label>
+                <input required type="text" class="form-control" name="judul" placeholder="enter judul post...">
               </div>
 
               <!-- summernote -->
               <div id="summernote"></div>
               <br>
               
-              <button href="#" class="btn btn-success btn-md " name="upload_posting" type="submit">Upload Posting </button>
+              <input class="btn btn-success btn-md " name="upload_posting" type="submit" value="Upload Post" />
 
           </form>
         </div>
@@ -132,6 +131,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -210,15 +210,13 @@
             </form>
         </div>
     </div>
-
-
   </div>
 
    <script>
       $('#summernote').summernote({
-        placeholder: 'Hello bootstrap 4',
+        placeholder: 'tulis blog kamu...',
         tabsize: 2,
-        height: 100
+        height: 500
       });
     </script>
 </body>

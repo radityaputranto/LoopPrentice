@@ -113,37 +113,34 @@
                 <tr>
                   <th>Judul Posting</th>
                   <th>Tanggal Posting</th>
-                  <th>Tanggal Publish</th>
-                  <th>Tanggal Edit</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
+              <tbody>
+                <?php foreach ($getBlog as $key) { ?>
+                  <tr>
+                    <td><?php echo $key->post_title;?></td>
+                    <td><?php echo $key->post_date;?></td> 
+                    <td><?php echo $key->post_kategori;?></td> 
+                    <td><?php echo $key->post_status;?></td> 
+                    <td>
+                      <button type="button" class="btn btn-primary">Edit</button>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                <?php } ?>                
+              </tbody>
               <tfoot>
                 <tr>
                   <th>Judul Posting</th>
                   <th>Tanggal Posting</th>
-                  <th>Tanggal Publish</th>
-                  <th>Tanggal Edit</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
                 </tr>
               </tfoot>
-              <tbody>
-                <tr>
-                  <td>Te posting 123</td>
-                  <td>3/11/2017</td> 
-                  <td>1/11/2017</td>
-                  <td>-</td>
-                  <td>
-                    <button type="button" class="btn btn-primary">Edit</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </td>
-                </tr>
-                
-              </tbody>
             </table>
           </div>
       <!-- end-tabel psting user -->

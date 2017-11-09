@@ -88,7 +88,7 @@ if($message_sales != '{}') {
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="?page=home_prentice&action=index">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?page=blog_prentice&action=index">Aksiku</a>
@@ -378,8 +378,6 @@ if($message_sales != '{}') {
             </div>
 
         </div>
-
-
   </div>
 </div>
 
