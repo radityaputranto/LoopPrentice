@@ -18,7 +18,8 @@
                 $controller = new PrivateAreaPrenticeController();
                 break;
             case 'privatearea_posting':
-                //require_once('models/privatearea.php');
+                require_once('models/privatearea.php');
+                require_once('models/BlogModel.php');
                 $controller = new PrivateAreaPostingController();
                 break;
             case 'login_prentice':
@@ -56,7 +57,7 @@
         'blog_single_prentice' => array('index','add','error'),
         'register_prentice' => array('index','add','error'),
         'privatearea_prentice' => array('index', 'addsales', 'error'),
-        'privatearea_posting' => array('index', 'addsales', 'error'),
+        'privatearea_posting' => array('index', 'addsales', 'error','addpost','deletepost','viewpost','editpost'),
         'privatearea_sales_prentice' => array('add', 'error'),
         'login_prentice' => array('index', 'auth', 'error'),
         'logout_prentice' => array('index', 'destroy', 'error'),
@@ -66,9 +67,6 @@
         // 'login' => array('index', 'auth', 'error'),
         // 'logout' => array('index', 'destroy', 'error'),
         // 'privatearea_sales' => array('add', 'error')
-
-        //tambahan ardi
-        'posting'=>array('index','error')
     );
 
     if (array_key_exists($controller, $controllers)) {

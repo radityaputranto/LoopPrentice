@@ -22,6 +22,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
+
+    <!-- tinymce -->
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=j18ccoizrbdzpcunfqk7dugx72d7u9kfwls7xlpxg7m21mb5"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -48,7 +51,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Posting">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="?page=privatearea_posting&action=index">
             <i class="fa fa-fw fa-pencil-square"></i>
             <span class="nav-link-text">Posting</span>
           </a>
@@ -87,30 +90,42 @@
       <!-- jumbotron -->
        <div class="row justify-content-center ">
        
-        <div class="col-lg-11 " >
+        <div class="col-lg-12" >
           <!-- style="background-color: #E9ECEF; border-radius: 10px;  -->
-          <form method="post" action="?page=privatearea_posting&action=add" enctype="multipart/form-data">
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Kategori</label>
-                <select required name="kategori" class="form-control" id="exampleFormControlSelect1">
-                  <option value="Artikel">Artikel</option>
-                  <option value="Vlog">Vlog</option>
-                  <option value="Photo">Photo</option>
-                  <option value="Lainnya">Lainnya</option>
-                </select>
-              </div>
-              <br>
-              
+          <form method="post" action="?page=privatearea_posting&action=addpost" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="judul">Judul Posting</label>
                 <input required type="text" class="form-control" name="judul" placeholder="enter judul post...">
               </div>
 
+              <div class="form-group">
+                <label for="judul">Tag</label>
+                <input required type="text" class="form-control" name="tag" placeholder="tag1, tag2, tag3, ...">
+              </div>
+
+              <div class="form-group">
+                <label for="judul">Cover Post</label>
+                <input required type="file" class="form-control" name="cover" >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Kategori</label>
+                <?php $kategori = array('Artikel'=>'Artikel','Blog'=>'Blog','Vlog'=>'Vlog','Photo'=>'Photo','Lainnya'=>'Lainnya'); ?>
+                <select required name="kategori" class="form-control">
+                  <?php foreach ($kategori as $key => $value) { ?>
+                    <option value="<?php echo $key;?>"><?php echo $value;?></option>  
+                  <?php } ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <textarea name="konten" class="form-control" class="konten" id="konten" placeholder="..."></textarea>
+              </div>
+
               <!-- summernote -->
-              <div id="summernote"></div>
-              <br>
+              <!-- <div id="summernote"></div> -->
               
-              <input class="btn btn-success btn-md " name="upload_posting" type="submit" value="Upload Post" />
+              <input class="btn btn-success btn-md " name="upload_posting" type="submit" value="Upload Post" /><br><br>
 
           </form>
         </div>
@@ -150,7 +165,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
 
@@ -217,6 +231,19 @@
         placeholder: 'tulis blog kamu...',
         tabsize: 2,
         height: 500
+      });
+    </script>
+    <script type="text/javascript">
+      tinymce.init({ 
+        selector:'#konten',
+        height: 500,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks advcode fullscreen',
+          'insertdatetime media table contextmenu powerpaste tinymcespellchecker a11ychecker linkchecker mediaembed',
+          'wordcount'
+        ],
+        toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | advcode spellchecker  a11ycheck code',
       });
     </script>
 </body>

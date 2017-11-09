@@ -15,11 +15,9 @@
   <link href="libs/dashboard/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="libs/dashboard/css/sb-admin.css" rel="stylesheet">
-  <?php
-    if($teamname == null) {
-      $teamname = "UNKNOWN";
-    }
-  ?>
+
+    <!-- tinymce -->
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=j18ccoizrbdzpcunfqk7dugx72d7u9kfwls7xlpxg7m21mb5"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -33,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="?page=privatearea_prentice&action=index">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -76,80 +74,58 @@
         <li class="breadcrumb-item">
           <a href="#">Loopprentice</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">Posting </li>
       </ol>
 
+      
+   
 
       <!-- jumbotron -->
-       <div class="row">
+       <div class="row justify-content-center ">
        
-        <div class="col-lg-12">
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-3">Hai , <?php echo $username; ?> </h1>
-              <p class="lead">Selamat datang di Loopprentice.</p>
-                <?php
-                $message_sales = '{}';
+        <div class="col-lg-12" >
+          <!-- style="background-color: #E9ECEF; border-radius: 10px;  -->
+          <form method="post" action="?page=privatearea_posting&action=editpost" enctype="multipart/form-data">
+          	<input type="hidden" name="idblog" value="<?php echo $data[0]->id_posting;?>">
+              <div class="form-group">
+                <label for="judul">Judul Posting</label>
+                <input value="<?php echo $data[0]->post_title;?>" required type="text" class="form-control" name="judul" placeholder="enter judul post...">
+              </div>
 
-                if(isset($_SESSION['message_sales'])) {
-                    $message_sales = $_SESSION['message_sales'];
-                    unset($_SESSION['message_sales']);
-                }
+              <div class="form-group">
+                <label for="judul">Tag</label>
+                <input value="<?php echo $data[0]->post_tag;?>" required type="text" class="form-control" name="tag" placeholder="tag1, tag2, tag3, ...">
+              </div>
 
-                $message = json_decode($message_sales);
-                if($message_sales != '{}') {
-                    echo $message->message;
-                }
-                ?>
-            </div>
-          </div>
+              <div class="form-group">
+                <label for="judul">Cover Post</label>
+                <input type="file" class="form-control" name="cover" >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Kategori</label>
+                <?php $kategori = array('Artikel'=>'Artikel','Blog'=>'Blog','Vlog'=>'Vlog','Photo'=>'Photo','Lainnya'=>'Lainnya'); ?>
+                <select required name="kategori" class="form-control">
+                	<?php foreach ($kategori as $key => $value) { ?>
+                		<option <?php echo ($key == $data[0]->post_kategori) ? "selected":"";?> value="<?php echo $key;?>"><?php echo $value;?></option>	
+                	<?php } ?>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <textarea name="konten" class="form-control" class="konten" id="konten" placeholder="..."><?php echo $data[0]->post_content;?></textarea>
+              </div>
+
+              <!-- summernote -->
+              <!-- <div id="summernote"></div> -->
+              
+              <input class="btn btn-success btn-md " name="upload_posting" type="submit" value="Upload Post" /><br><br>
+
+          </form>
         </div>
       </div>
 
-      <!-- tabel psting user -->
-      <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Judul Posting</th>
-                  <th>Last Modified</th>
-                  <th>Kategori</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($getBlog as $key) {
-                  if($key->post_status == 'confirm') $st = "text-warning";
-                  else if($key->post_status == 'block') $st = "text-danger";
-                  else $st = "text-success";
-                 ?>
-                  <tr>
-                    <td><?php echo $key->post_title;?></td>
-                    <td><?php echo $key->post_date;?></td> 
-                    <td><?php echo $key->post_kategori;?></td> 
-                    <td class="<?php echo $st;?>"><?php echo $key->post_status;?></td> 
-                    <td>
-                      <a href="?page=privatearea_posting&action=viewpost&idblog=<?php echo $key->id_posting;?>" class="btn btn-info">lihat</a>
-                      <a href="?page=privatearea_posting&action=deletepost&idblog=<?php echo $key->id_posting;?>" class="btn btn-danger">delete</a>
-                    </td>
-                  </tr>
-                <?php } ?>                
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Judul Posting</th>
-                  <th>Last Modified</th>
-                  <th>Kategori</th>
-                  <th>Status</th>
-                  <th>Aksi</th>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-      <!-- end-tabel psting user -->
-
-      
+     
       
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
@@ -164,6 +140,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+
     <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -182,6 +159,7 @@
         </div>
       </div>
     </div>
+  </div>
 
 
     <!-- sales Modal-->
@@ -240,10 +218,21 @@
             </form>
         </div>
     </div>
-
-
   </div>
-</body>
+
+	<script type="text/javascript">
+	  tinymce.init({ 
+	    selector:'#konten',
+	    height: 500,
+	    plugins: [
+	      'advlist autolink lists link image charmap print preview anchor',
+	      'searchreplace visualblocks advcode fullscreen',
+	      'insertdatetime media table contextmenu powerpaste tinymcespellchecker a11ychecker linkchecker mediaembed',
+	      'wordcount'
+	    ],
+	    toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | advcode spellchecker  a11ycheck code',
+	  });
+	</script>
   <!-- Bootstrap core JavaScript-->
   <script src="libs/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="libs/dashboard/vendor/popper/popper.min.js"></script>
@@ -308,4 +297,6 @@
           }
       }
     </script>
+    </body>
 </html>
+
