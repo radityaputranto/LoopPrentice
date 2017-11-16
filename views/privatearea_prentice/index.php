@@ -112,38 +112,39 @@
               <thead>
                 <tr>
                   <th>Judul Posting</th>
-                  <th>Tanggal Posting</th>
-                  <th>Tanggal Publish</th>
-                  <th>Tanggal Edit</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>Last Modified</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
+              <tbody>
+                <?php foreach ($getBlog as $key) {
+                  if($key->post_status == 'confirm') $st = "text-warning";
+                  else if($key->post_status == 'block') $st = "text-danger";
+                  else $st = "text-success";
+                 ?>
+                  <tr>
+                    <td><?php echo $key->post_title;?></td>
+                    <td><?php echo $key->post_date;?></td> 
+                    <td><?php echo $key->post_kategori;?></td> 
+                    <td class="<?php echo $st;?>"><?php echo $key->post_status;?></td> 
+                    <td>
+                      <a href="?page=privatearea_posting&action=viewpost&idblog=<?php echo $key->id_posting;?>" class="btn btn-info">lihat</a>
+                      <a href="?page=privatearea_posting&action=deletepost&idblog=<?php echo $key->id_posting;?>" class="btn btn-danger">delete</a>
+                    </td>
+                  </tr>
+                <?php } ?>                
+              </tbody>
               <tfoot>
                 <tr>
                   <th>Judul Posting</th>
-                  <th>Tanggal Posting</th>
-                  <th>Tanggal Publish</th>
-                  <th>Tanggal Edit</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>Last Modified</th>
+                  <th>Kategori</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
                 </tr>
               </tfoot>
-              <tbody>
-                <tr>
-                  <td>Te posting 123</td>
-                  <td>3/11/2017</td> 
-                  <td>1/11/2017</td>
-                  <td>-</td>
-                  <td>
-                    <button type="button" class="btn btn-primary">Edit</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </td>
-                </tr>
-                
-              </tbody>
             </table>
           </div>
       <!-- end-tabel psting user -->

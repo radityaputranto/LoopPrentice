@@ -20,6 +20,7 @@
         public function index() {
             $username = $this->getUsername();
             $teamname = $this->getTeamname();
+            $getBlog = BlogModel::getBlog($username);
             require_once('views/privatearea_prentice/index.php');
         }
 

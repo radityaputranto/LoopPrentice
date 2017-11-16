@@ -14,10 +14,12 @@
                 break;
             case 'privatearea_prentice':
                 require_once('models/privatearea.php');
+                require_once('models/BlogModel.php');
                 $controller = new PrivateAreaPrenticeController();
                 break;
             case 'privatearea_posting':
-                //require_once('models/privatearea.php');
+                require_once('models/privatearea.php');
+                require_once('models/BlogModel.php');
                 $controller = new PrivateAreaPostingController();
                 break;
             case 'login_prentice':
@@ -32,12 +34,17 @@
                 $controller = new PrivateAreaSalesPrenticeController();
                 break;
             case 'blog_prentice':
-                //require_once('models/blog.php');
+                require_once('models/BlogModelFront.php');
                 $controller = new blog_PrenticeController();
                 break;
             case 'blog_single_prentice':
                 //require_once('models/blogSingle.php');
                 $controller = new blog_single_PrenticeController();
+                break;
+
+            //tambahan ardi
+            case 'posting':
+                $controller = new PostingController();
                 break;
         }
 
@@ -50,10 +57,10 @@
         'blog_single_prentice' => array('index','add','error'),
         'register_prentice' => array('index','add','error'),
         'privatearea_prentice' => array('index', 'addsales', 'error'),
-        'privatearea_posting' => array('index', 'addsales', 'error'),
+        'privatearea_posting' => array('index', 'addsales', 'error','addpost','deletepost','viewpost','editpost'),
         'privatearea_sales_prentice' => array('add', 'error'),
         'login_prentice' => array('index', 'auth', 'error'),
-        'logout_prentice' => array('index', 'destroy', 'error')
+        'logout_prentice' => array('index', 'destroy', 'error'),
         // 'home' => array('index', 'error'),
         // 'register' => array('index', 'add', 'error'),
         // 'privatearea' => array('index', 'addsales', 'error'),
