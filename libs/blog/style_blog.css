@@ -13,3 +13,28 @@ body{
 	background-color: #F8F9FB;
 	border-radius: 20px;
 }
+.kategori{
+	margin: 0 auto;
+    text-align: center;
+    border: solid #e3e3e3;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+.kategori:hover{
+	margin: 0 auto;
+    text-align: center;
+    border: solid #CF3124;
+    background-color: #CF3124;
+    border-radius: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+.kategori-link{
+	color: #3E4043;
+}
+.kategori-link:hover{
+	color: white;
+}

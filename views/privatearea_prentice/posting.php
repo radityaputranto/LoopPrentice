@@ -123,8 +123,16 @@
                 <textarea name="konten" class="form-control" class="konten" id="konten" placeholder="..."></textarea>
               </div>
 
+              <!-- gambar cover -->
+               <div class="form-group">
+                  <label for="imgCover">Cover Gambar Posting</label>
+                  <input type="file" class="form-control-file" id="imgCover">
+                </div>
+
               <!-- summernote -->
+
               <!-- <div id="summernote"></div> -->
+
               
               <input class="btn btn-success btn-md " name="upload_posting" type="submit" value="Upload Post" /><br><br>
 
@@ -229,7 +237,9 @@
 
    <script>
       $('#summernote').summernote({
+
         placeholder: 'tulis blog kamu...',
+
         tabsize: 2,
         height: 500
       });
